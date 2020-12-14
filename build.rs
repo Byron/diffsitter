@@ -78,14 +78,13 @@ fn main() -> Result<()> {
             cpp_sources: vec!["scanner.cc"],
             ..GrammarCompileInfo::default()
         },
-        //GrammarCompileInfo {
-        //display_name: "c",
-        //path: PathBuf::from("grammars/tree-sitter-c"),
-        //source_files: vec!["parser.c"],
-        //compile_cpp: false,
-        //},
+        GrammarCompileInfo {
+            display_name: "c",
+            path: PathBuf::from("grammars/tree-sitter-c"),
+            c_sources: vec!["parser.c"],
+            ..GrammarCompileInfo::default()
+        },
     ];
-
     // The string represented the generated code that we get from the tree sitter grammars
     let mut codegen = String::from(
         r#"
